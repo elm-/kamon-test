@@ -10,12 +10,12 @@ import net.joaoqalves.rest.InitActor
 import net.joaoqalves.tracing.TracingApp._
 
 trait KamonApp {
-    implicit val system = ActorSystem("kamon-test")
+  implicit val system = ActorSystem("kamon-test")
 
-    val listener = system.actorOf(Props[KamonListenerActor], "kamon-listener")
+  val listener = system.actorOf(Props[KamonListenerActor], "kamon-listener")
 
-    Kamon(Metrics).subscribe(ActorMetrics, "*", listener, permanently = true)
-    Kamon(Metrics).subscribe(TraceMetrics, "*", listener, permanently = true)
+  Kamon(Metrics).subscribe(ActorMetrics, "*", listener, permanently = true)
+  Kamon(Metrics).subscribe(TraceMetrics, "*", listener, permanently = true)
 
   system.registerOnTermination({
     System.exit(0)

@@ -41,7 +41,7 @@ object Dependencies {
 
   val javaReflections = "org.reflections" % "reflections" % "0.9.9-RC1"
 
-  val kamon = "io.kamon" %  "kamon-core" % "0.3.0"
+  val kamon = "io.kamon" %% "kamon-core" % "0.3.1"
   val aspectJ = "org.aspectj" % "aspectjrt" % Versions.aspectJ
   val aspectjWeaver = "org.aspectj" % "aspectjweaver" % Versions.aspectJ
 
