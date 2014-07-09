@@ -1,5 +1,6 @@
+import com.typesafe.sbt.SbtAspectj.AspectjKeys._
+import com.typesafe.sbt.SbtAspectj._
 import sbt._
-import AspectJ.aspectJSettings
 
 object BuildSettings {
   import Keys._
@@ -26,4 +27,13 @@ object BuildSettings {
   ) ++ aspectJSettings
 
   lazy val sprayRunSettings = spray.revolver.RevolverPlugin.Revolver.settings
+
+  lazy val aspectJSettings = aspectjSettings ++ Seq(
+    aspectjVersion :=  Dependencies.Versions.aspectJ,
+    compileOnly in Aspectj :=  true,
+    fork in run := true,
+    javaOptions in Test <++=  weaverOptions in Aspectj,
+    javaOptions in run <++=  weaverOptions in Aspectj,
+    lintProperties in Aspectj +=  "invalidAbsoluteTypeName = ignore"
+  )
 }

@@ -1,4 +1,0 @@
-# myEngine #
-
-The analytics engine.
-
