@@ -1,10 +1,7 @@
 package net.joaoqalves.tracing
 
 import akka.actor._
-import kamon.metrics.MetricSnapshot
-import kamon.metrics.Scale
-import kamon.metrics.instruments._
-import kamon.metrics.MetricIdentity
+import kamon.metric._
 import kamon.trace.TraceContext._
 import kamon.trace.{TraceContext, TraceRecorder}
 

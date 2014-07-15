@@ -1,9 +1,7 @@
 package net.joaoqalves.tracing
 
 import akka.actor.{ActorLogging, Actor, Props, ActorSystem}
-import kamon.trace.TraceRecorder
-import kamon.metrics.ActorMetrics.ActorMetricRecorder
-import kamon.metrics.{TraceMetrics, ActorMetrics, Metrics}
+import kamon.metric.{TraceMetrics, ActorMetrics, Metrics}
 import kamon.Kamon
 import net.joaoqalves.KamonListenerActor
 

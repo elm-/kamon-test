@@ -7,8 +7,8 @@ object Build extends Build {
   import BuildSettings._
   import Dependencies._
 
-  lazy val root = Project(id = "kamon-test",
-                              base = file("kamon-test"))
+  lazy val kamonTest = Project(id = "kamon-test",
+                              base = file("."))
     .settings(basicSettings: _*)
     .settings(sprayRunSettings: _*)
     .settings(aspectJSettings: _*)
